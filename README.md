@@ -7,7 +7,7 @@ Can help you organize props passing to Vue.js components for your [Storybook](ht
 
 MyButton.story.js:
 
-```
+```js
 import { storiesOf } from '@storybook/vue';
 import vuePropsToKnobs from 'vuePropsToKnobs';
 import { boolean, number, text, array, object, select } from '@storybook/addon-knobs';
@@ -29,7 +29,7 @@ export const exampleWithKnobs = () => ({
 ```
 
 MyButton.vue:
-```
+```vue
 <template>
   <button :disabled="isDisabled">
     {{label}}
@@ -53,7 +53,7 @@ export default {
 ```
 
 ## Definition
-```
+```js
 vuePropsToKnobs(knobs: Object)(
     component: VueComponent,
     defaults?: Object,
@@ -65,7 +65,7 @@ vuePropsToKnobs(knobs: Object)(
 Required argument, type is object. You must pass boolean, number, text, array, object and select functions from storybook/addon-knobs.
 
 It can be used as:
-```
+```js
 import vuePropsToKnobs from 'vuePropsToKnobs';
 import { boolean, number, text, array, object, select } from '@storybook/addon-knobs';
 
@@ -76,7 +76,7 @@ export default vuePropsToKnobs({ boolean, number, text, array, object, select })
 Required argument, type is object (Constructor of Vue.js component).
 
 It can be used as:
-```
+```js
 import MyButton from './MyButton.vue';
 
 vuePropsToKnobs(knobs)(MyButton);
@@ -86,7 +86,7 @@ vuePropsToKnobs(knobs)(MyButton);
 Not required argument, type is object. You can pass default knob value for your story.
 
 It can be used as:
-```
+```js
 import MyButton from './MyButton.vue';
 
 const defaults = {
@@ -97,7 +97,7 @@ vuePropsToKnobs(knobs)(MyButton, defaults);
 ```
 
 For props, which type is array, you should pass array for default knob value.
-```
+```js
 import MySelect from './MySelect.vue';
 
 const defaults = {
@@ -108,7 +108,7 @@ vuePropsToKnobs(knobs)(MySelect, defaults);
 ```
 
 If you need make select knob in your Storybook interface, you should pass Set in defaults:
-```
+```js
 import MyLink from './MyLink.vue';
 
 const defaults = {
@@ -121,7 +121,7 @@ vuePropsToKnobs(knobs)(MyLink, defaults);
 Not required argument, type is object. You can categorize your Knobs by assigning them a groupId. When groups argument is passed, your props will be sorted as items in object.
 
 It can be used as:
-```
+```js
 import MySelect from './MySelect.vue';
 
 const groups = {
