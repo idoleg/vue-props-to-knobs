@@ -1,5 +1,5 @@
 {
-  "name": "props-to-knobs",
+  "name": "vue-props-to-knobs",
   "version": "1.0.0",
   "description": "Automatically generate Storybook knobs based on Vue component",
   "author": "Oleg Shikov",
