@@ -42,6 +42,7 @@ jobs:
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
+          scope: '@idoleg'
       - run: npm ci
       - run: npm run build
       - run: npm publish
