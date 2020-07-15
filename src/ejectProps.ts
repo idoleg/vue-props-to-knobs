@@ -24,15 +24,15 @@ export function ejectProps(component: any): props {
 
   if (component.prototype) {
     const constructor = component.prototype.constructor;
-    if (constructor.superOptions.props) {
+    if (constructor.superOptions && constructor.superOptions.props) {
       props = { ...props, ...constructor.superOptions.props };
     }
-    if (constructor.extendOptions.mixins) {
+    if (constructor.extendOptions && constructor.extendOptions.mixins) {
       constructor.extendOptions.mixins.forEach((mixin: any) => {
-        props = { ...props, ...mixin.extendOptions.props };
+        props = { ...props, ...mixin.extendOptions?.props };
       });
     }
-    if (constructor.extendOptions.props) {
+    if (constructor.extendOptions && constructor.extendOptions.props) {
       props = { ...props, ...constructor.extendOptions.props };
     }
   }
