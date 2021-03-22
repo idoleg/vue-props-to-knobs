@@ -6,7 +6,8 @@
   "keywords": [
     "vue",
     "addon",
-    "storybook"
+    "storybook",
+    "storybook-addon"
   ],
   "license": "MIT",
   "main": "dist/index.js",
